@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        h1 {
+            font-family: 'Macondo Swash Caps', cursive;
+            font-size: 4rem;
+            margin: 0;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.2);
+            animation: fadeInOut 4s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Not Found - 404</h1>
+    <p>Halaman tidak ditemukan atau file belum ada</p>
+    <a href="/" class="btn">Kembali ke Beranda</a>
+    <div class="watermark">Selayar Berkibar 2025</div>
+</body>
+</html>

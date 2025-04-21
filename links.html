@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemendek URL Selayar Berkibar</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: #99E2B4;
+    color: #03045E;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+        h2 {
+            font-family: 'Macondo Swash Caps', cursive;
+            font-size: 2rem;
+            color: #FA762C;
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #03045E;
+            border-radius: 5px;
+        }
+        button {
+            background: #FA762C;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #D64527;
+        }
+        ul {
+            text-align: left;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .url-prefix {
+            font-weight: bold;
+            color: #FA762C;
+        }
+        #note {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #D64527;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pemendek URL Selayar</h2>
+    <form id="shortForm">
+        <label for="originalURL">Link Asli:</label>
+        <input type="text" id="originalURL" required placeholder="Masukkan link asli...">
+        
+        <label for="path">Link Pendek:</label>
+        <span class="url-prefix">go.selayarberkibar.id/</span>
+        <input type="text" id="path" required placeholder="isi sisanya...">
+        
+        <button type="submit">Perpendek URL</button>
+    </form>
+
+    <h3>Tips dalam membuat URL pendek:</h3>
+    <ul>
+        <li>Buat sependek mungkin</li>
+        <li>Tidak ada perbedaan huruf kapital dan huruf kecil</li>
+        <li>Usahakan maksimal 3 kata</li>
+    </ul>
+
+    <h3 id="note" style="display: none;">Catatan:</h3>
+    <ul id="note-list" style="display: none;">
+        <li>Pastikan URL Asli adalah link valid</li>
+        <li>Pastikan link pendek tidak ada duplikat</li>
+    </ul>
+
+    <script>
+        document.getElementById("shortForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let originalURL = document.getElementById("originalURL").value;
+            let path = document.getElementById("path").value;
+            
+            if (!originalURL || !path) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Harap isi semua bidang!",
+                });
+                return;
+            }
+            
+            Swal.fire({
+                title: "Konfirmasi Pemendekan URL",
+                html: `<b>Link asli:</b> ${originalURL} <br><b>Link pendek:</b> https://go.selayarberkibar.id/${path}<br><br><b style='color: red;'>LINK TIDAK DAPAT DIHAPUS</b>`,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#FA762C",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya, perpendek!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let apiUrl = `https://api.short.io/links/tweetbot?domain=go.selayarberkibar.id&path=${encodeURIComponent(path)}&originalURL=${encodeURIComponent(originalURL)}&apiKey=sk_mkhSpFNlX205oCOR`;
+                    fetch(apiUrl);
+                    
+                    Swal.fire({
+                        icon: "success",
+                        title: "Link berhasil dibuat!",
+                        html: `Link: <a href="https://go.selayarberkibar.id/${path}" target="_blank">https://go.selayarberkibar.id/${path}</a><br><br>Pastikan URL asli valid<br>Jika link pendek tidak sesuai, berarti link telah ada sebelumnya<br>Hubungi admin untuk pengubahan atau penghapusan`,
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
