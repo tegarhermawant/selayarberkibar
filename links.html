@@ -1,139 +1,278 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemendek URL Selayar Berkibar</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-body {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    background: #99E2B4;
-    color: #03045E;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Selayar Berkibar</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Selayar Berkibar - Shorlink">
+  <meta property="og:description" content="Pendekkan URL-mu.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczOnTMAioIk3Dii1EkgpFe_IyVA8_o8surIb-7DEykvxLJR5AdUlPQU3y4p6Xh-fTnzX6gb_GRfnuPTP6LcBtmLhOmq_lSFgm1tA2FdoCxhr9N_S2N19MtVrCfsJxco4eOcFDmdSC7UXmPVSrbBTf-Qr=w2234-h1678-s-no?authuser=1">
+  <meta property="og:url" content="https://selayarberkibar.id/links.html">
+  <meta property="og:type" content="website">
+  <meta name="description" content="Pendekkan URL-mu.">
+  <meta name="keywords" content="Shorlink Berkibar">
 
-form {
-    display: inline-block;
-    text-align: left;
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
+  <!-- Favicons -->
+  <link href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2QWrlLz2bROIzlXPf8DXzDLykl3jRVMf7Av3LX2HB-ejFtMLhA_C5iu3whtYeoj2b2txgn8jkBLYjGwptjCLRBsfxBR_ImAC4-2zBTYc6iGhSlqmzBFTDpMDvRBPJyRhfXUbg7Rwu81S1ZeTMIi7wDtW5j0qUJJmsOfB3hJgZKjohScIBKvq-LWKOJ_s/s1600/336000366_1259282744985727_2576770839667009728_n-removebg-preview.png" rel="icon">
+  <link href="" rel="apple-touch-icon">
 
-        h2 {
-            font-family: 'Macondo Swash Caps', cursive;
-            font-size: 2rem;
-            color: #FA762C;
-        }
-        input, button {
-            display: block;
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #03045E;
-            border-radius: 5px;
-        }
-        button {
-            background: #FA762C;
-            color: white;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background: #D64527;
-        }
-        ul {
-            text-align: left;
-            display: inline-block;
-            font-weight: 600;
-        }
-        .url-prefix {
-            font-weight: bold;
-            color: #FA762C;
-        }
-        #note {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #D64527;
-        }
-    </style>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://selayarberkibar.id/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://selayarberkibar.id/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://selayarberkibar.id/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="https://selayarberkibar.id/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://selayarberkibar.id/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="https://selayarberkibar.id/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>
-    <h2>Pemendek URL Selayar</h2>
-    <form id="shortForm">
-        <label for="originalURL">Link Asli:</label>
-        <input type="text" id="originalURL" required placeholder="Masukkan link asli...">
-        
-        <label for="path">Link Pendek:</label>
-        <span class="url-prefix">go.selayarberkibar.id/</span>
-        <input type="text" id="path" required placeholder="isi sisanya...">
-        
-        <button type="submit">Perpendek URL</button>
-    </form>
 
-    <h3>Tips dalam membuat URL pendek:</h3>
-    <ul>
-        <li>Buat sependek mungkin</li>
-        <li>Tidak ada perbedaan huruf kapital dan huruf kecil</li>
-        <li>Usahakan maksimal 3 kata</li>
-    </ul>
+<body class="starter-page-page">
 
-    <h3 id="note" style="display: none;">Catatan:</h3>
-    <ul id="note-list" style="display: none;">
-        <li>Pastikan URL Asli adalah link valid</li>
-        <li>Pastikan link pendek tidak ada duplikat</li>
-    </ul>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-    <script>
-        document.getElementById("shortForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            let originalURL = document.getElementById("originalURL").value;
-            let path = document.getElementById("path").value;
-            
-            if (!originalURL || !path) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Harap isi semua bidang!",
-                });
-                return;
-            }
-            
-            Swal.fire({
-                title: "Konfirmasi Pemendekan URL",
-                html: `<b>Link asli:</b> ${originalURL} <br><b>Link pendek:</b> https://go.selayarberkibar.id/${path}<br><br><b style='color: red;'>LINK TIDAK DAPAT DIHAPUS</b>`,
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#FA762C",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Ya, perpendek!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    let apiUrl = `https://api.short.io/links/tweetbot?domain=go.selayarberkibar.id&path=${encodeURIComponent(path)}&originalURL=${encodeURIComponent(originalURL)}&apiKey=sk_mkhSpFNlX205oCOR`;
-                    fetch(apiUrl);
-                    
+      <a href="https://selayarberkibar.id/" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2QWrlLz2bROIzlXPf8DXzDLykl3jRVMf7Av3LX2HB-ejFtMLhA_C5iu3whtYeoj2b2txgn8jkBLYjGwptjCLRBsfxBR_ImAC4-2zBTYc6iGhSlqmzBFTDpMDvRBPJyRhfXUbg7Rwu81S1ZeTMIi7wDtW5j0qUJJmsOfB3hJgZKjohScIBKvq-LWKOJ_s/s1600/336000366_1259282744985727_2576770839667009728_n-removebg-preview.png" alt="">
+        <h1 class="sitename">Selayar Berkibar</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/index.html" class="active">Beranda<br></a></li>
+          <li><a href="/index.html#about" class="">Tentang</a></li>
+          <li><a href="/index.html#services" class="">Pelayanan</a></li>
+          <li><a href="/index.html#portfolio" class="">Program kerja</a></li>
+          <li><a href="/index.html#team" class="">Tim</a></li>
+         <!--  <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>-->
+          <li><a href="/index.html#contact" class="">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="/index.html#about">Ayo Berkolaborasi!</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1><br>Shortlink Berkibar</h1>
+              <p class="mb-0">Buat link yang pendek</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="https://selayarberkibar.id/">Home</a></li>
+            <li class="current">Links</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+        <form id="shortForm">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+          
+                  <div class="form-group mb-3">
+                    <h4>Link Lengkap</h4>
+                    <input type="text" id="originalURL" class="form-control" placeholder="Masukkan link panjang. Contoh: https://drive.google.com/file/d/11k7rXRWbmcfeKnTcefiKzixj15vvXa_V/view" required>
+                  </div>
+          
+                  <div class="form-group mb-3">
+                    <h4>Link Pendek https://go.selayarberkibar.id/___</h4>
+                    <input type="text" id="path" class="form-control" placeholder="Masukkan sambungan link pendek. Contoh: mitra" required>
+                  </div>
+          
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+          </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById("shortForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                let originalURL = document.getElementById("originalURL").value;
+                let path = document.getElementById("path").value;
+                
+                if (!originalURL || !path) {
                     Swal.fire({
-                        icon: "success",
-                        title: "Link berhasil dibuat!",
-                        html: `Link: <a href="https://go.selayarberkibar.id/${path}" target="_blank">https://go.selayarberkibar.id/${path}</a><br><br>Pastikan URL asli valid<br>Jika link pendek tidak sesuai, berarti link telah ada sebelumnya<br>Hubungi admin untuk pengubahan atau penghapusan`,
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Harap isi semua bidang!",
                     });
+                    return;
                 }
+                
+                Swal.fire({
+                    title: "Konfirmasi Pemendekan URL",
+                    html: `<b>Link asli:</b> ${originalURL} <br><b>Link pendek:</b> https://go.selayarberkibar.id/${path}<br><br><b style='color: red;'>LINK TIDAK DAPAT DIHAPUS</b>`,
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#FA762C",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Ya, perpendek!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let apiUrl = `https://api.short.io/links/tweetbot?domain=go.selayarberkibar.id&path=${encodeURIComponent(path)}&originalURL=${encodeURIComponent(originalURL)}&apiKey=sk_mkhSpFNlX205oCOR`;
+                        fetch(apiUrl);
+                        
+                        Swal.fire({
+                            icon: "success",
+                            title: "Link berhasil dibuat!",
+                            html: `Link: <a href="https://go.selayarberkibar.id/${path}" target="_blank">https://go.selayarberkibar.id/${path}</a><br><br>Pastikan URL asli valid<br>Jika link pendek tidak sesuai, berarti link telah ada sebelumnya<br>Hubungi admin untuk pengubahan atau penghapusan`,
+                        });
+                    }
+                });
             });
+        </script>
+        <script>
+        const pathInput = document.getElementById("path");
+        pathInput.addEventListener("input", function () {
+            // Hapus karakter yang bukan huruf kecil (a-z) atau angka (0-9)
+            this.value = this.value
+            .toLowerCase()                   // ubah ke huruf kecil
+            .replace(/[^a-z0-9]/g, "");      // hilangkan semua simbol dan spasi
         });
-    </script>
+        </script>
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Selayar Berkibar</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Universitas Gadjah Mada</p>
+              <p>Yogyakarta</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+62 882-9613-0072</span></p>
+              <p><strong>Email:</strong> <span>tegarhermawantahir@mail.ugm.ac.id</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+             <!-- <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a> -->
+              <a href="https://www.instagram.com/selayarberkibar"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/selayarberkibar"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://go.selayarberkibar.id/dukungan"> Surat Pendukung</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://go.selayarberkibar.id/mitra"> Proposal Kemitraan</a></li>
+            </ul>
+          </div>
+
+         <!-- <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Graphic Design</a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Selayar Berkibar</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Presented by <a href="">KKN-PPM Selayar Berkibar</a> Distributed by <a href="http://pengabdian.ugm.ac.id">Direktorat Pengabdian Kepada Masyarakat Universitas Gadjah Mada</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://selayarberkibar.id/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/aos/aos.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://selayarberkibar.id/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="https://selayarberkibar.id/assets/js/main.js"></script>
+
 </body>
+
 </html>
